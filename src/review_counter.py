@@ -1,4 +1,6 @@
-import preprocessing as clean
+import pre_processing as clean
+from pre_processing import data_division as dd
+
 '''Function: review_counter
 Parameters: output_occurrence - an empty dictionary to which each word label pair will be mapped to its frequency
             reviews - a list of reviews
@@ -17,3 +19,7 @@ def review_counter(output_occurrence, reviews, positive_or_negative):
                 output_occurrence.update({key:1})
    
     return output_occurrence
+
+# Build the freqs dictionary for later uses
+# freqs will be the frequency dictionary for all the words and their corresponding labels in our training data
+freqs = review_counter({}, dd.X_train, dd.y_train)
