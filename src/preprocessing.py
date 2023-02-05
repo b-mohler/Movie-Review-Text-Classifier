@@ -46,5 +46,3 @@ output_map = {'positive': 0, 'negative': 1}
 y_train = y_train.map(output_map)
 y_test = y_test.map(output_map)
 
-#testing the cleaning process
-print(clean_review(X_train.iloc[0]))
