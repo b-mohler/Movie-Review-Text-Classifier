@@ -1,7 +1,9 @@
 import random
 import data_division as dd
-import preprocessing as pp
+import pre_processing as pp
 import pandas as pd
+import test
+import training
 '''Function: split_data
 Parameters: seed - a randomizing seed to allow the data to be randomized in the same way repeatedly
 Outputs: split_data.random_X_test - randomized test data consisting of reviews
@@ -33,3 +35,8 @@ def split_data(seed):
     split_data.random_y_train = pd.Series(split_data.random_y_train)
 
     return split_data.random_X_test, split_data.random_X_train, split_data.random_y_test, split_data.random_y_train
+
+print("The training accuracy is:\n", 
+      test.test_naive_bayes(split_data.random_X_train, split_data.random_y_train, training.logprior, training.loglikelihood),
+      + "\n The test accuracy is:\n", 
+      test.test_naive_bayes(split_data.random_X_test, split_data.random_y_test, training.logprior, training.loglikelihood))
