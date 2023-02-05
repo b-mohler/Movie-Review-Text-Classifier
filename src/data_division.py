@@ -3,7 +3,7 @@ from sklearn.utils import resample
 
 
 #creating a dataframe from the movie review data
-df = pd.read_csv("data/movie_reviews.csv.zip", sep = ',', encoding = 'latin-1', usecols = lambda col: col not in ["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"])
+df = pd.read_csv("data/movie_reviews.csv.zip")
 
 #breaking up the dataframe into separate dfs for positive and negative
 pos = df[df['sentiment'] == "positive"]
