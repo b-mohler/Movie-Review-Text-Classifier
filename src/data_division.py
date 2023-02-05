@@ -3,7 +3,7 @@ from sklearn.utils import resample
 
 
 #creating a dataframe from the movie review data
-df = pd.read_csv("data/movie_reviews.csv.zip")
+df = pd.read_csv("Movie-Review-Text-Classifier/data/movie_reviews.csv.zip")
 
 #breaking up the dataframe into separate dfs for positive and negative
 pos = df[df['sentiment'] == "positive"]
