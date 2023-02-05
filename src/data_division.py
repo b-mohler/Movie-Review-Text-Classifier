@@ -1,9 +1,10 @@
 import pandas as pd
 from sklearn.utils import resample
-
+import os
 
 #creating a dataframe from the movie review data
-df = pd.read_csv(".../data/movie_reviews.csv.zip")
+filename = "D:\data"
+df = pd.read_csv("os.path.join(filename, movie_reviews.csv.zip"))
 
 #breaking up the dataframe into separate dfs for positive and negative
 pos = df[df['sentiment'] == "positive"]
