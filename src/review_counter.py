@@ -1,4 +1,4 @@
-import pre_processing as clean
+import pre_processing as pp
 from pre_processing import data_division as dd
 
 '''Function: review_counter
@@ -11,7 +11,7 @@ Outputs: a dictionary where the keys are word label pairs (where the label is th
 def review_counter(output_occurrence, reviews, positive_or_negative):
 
     for label, review in zip(positive_or_negative, reviews):
-        for token in clean.clean_review(review):
+        for token in pp.clean_review(review):
             key = (token,label)
             if key in output_occurrence:
                 output_occurrence[key] += 1
