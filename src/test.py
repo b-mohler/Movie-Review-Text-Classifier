@@ -36,3 +36,5 @@ def test_naive_bayes(test_x, test_y, logprior, loglikelihood):
     print("number of reviews:",len(test_x))
     print("accuracy",accuracy)
     return accuracy
+
+print("The training results are:\n", test_naive_bayes(X_train, y_train, logprior, loglikelihood) + "\n The test results are:", test_naive_bayes(X_test, y_test, logprior, loglikelihood))
