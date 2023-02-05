@@ -1,10 +1,11 @@
 import pandas as pd
 from sklearn.utils import resample
 import os
+import zipfile
 
 #creating a dataframe from the movie review data
 absolute_path = os.path.abspath(os.path.dirname('movie_reviews.csv.zip'))
-df = pd.read_csv(absolute_path + '/movie_reviews.csv.zip')
+df = pd.read_csv(absolute_path + '/movie_reviews.csv.zip', compression='zip')
 
 
 #breaking up the dataframe into separate dfs for positive and negative
