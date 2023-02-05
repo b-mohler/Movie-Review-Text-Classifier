@@ -1,5 +1,5 @@
-import pre_processing as pp
-from pre_processing import data_division as dd
+import preprocessing as pp
+from preprocessing import data_division as dd
 
 '''Function: review_counter
 Parameters: output_occurrence - an empty dictionary to which each word label pair will be mapped to its frequency
