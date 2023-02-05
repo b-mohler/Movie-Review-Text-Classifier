@@ -4,7 +4,7 @@ import os
 
 #creating a dataframe from the movie review data
 filename = "D:\data"
-df = pd.read_csv("os.path.join(filename, movie_reviews.csv.zip"))
+df = pd.read_csv(os.path.join(filename, "movie_reviews.csv.zip"))
 
 #breaking up the dataframe into separate dfs for positive and negative
 pos = df[df['sentiment'] == "positive"]
