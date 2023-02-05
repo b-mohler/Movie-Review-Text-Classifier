@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 import data_division as dd
+
 '''Function: clean_review
 Parameters: review (the review to be cleaned)
 Output: the review once it has been stripped of websites, line break markers, email addresses, punctuation and stopwords, as well as being tokenized and those tokens stemmed,
@@ -25,7 +26,25 @@ def clean_review(review):
     review_cleaned = [stemmer.stem(word) for word in review]
     return review_cleaned
 
-#testing on a randomly selected review from the training dataset by printing the initial review as well as the cleaned result
-test_review = dd.X_train.iloc[10403]
-print(test_review)
-clean_review(test_review)
+'''Function: find_occurrence
+Parameters: frequency - a frequency dictionary of the words in the vocab for the reviews 
+            word - the word we're trying to find the number of occurrences for
+            label - 0 or 1 depending on whether we want the positive or negative occurrences of the word
+The word and label make up the key for the frequency dict
+Outputs: the number of times the word occurs in the context of its given label
+This will be the value associated with the word,label key in the dictionary'''
+
+def find_occurrence(frequency, word, label):
+    if (word,label) not in frequency:
+        result = 0
+    else:
+        result = frequency[word,label]
+    return result
+
+#Up to this point we've used string labels of "positive" and "negative" but now we use mapping to convert those strings to the integers 0 and 1 respectively
+output_map = {'positive': 0, 'negative': 1}
+y_train = y_train.map(output_map)
+y_test = y_test.map(output_map)
+
+#testing the cleaning process
+print(clean_review(X_train.iloc[0]))
