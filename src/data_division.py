@@ -4,7 +4,7 @@ import os
 import zipfile
 
 #creating a dataframe from the movie review data
-absolute_path = os.path.abspath(os.path.dirname('movie_reviews.csv.zip'))
+absolute_path = os.path.abspath('movie_reviews.csv.zip')
 df = pd.read_csv(absolute_path + '/movie_reviews.csv.zip', compression='zip')
 
 
