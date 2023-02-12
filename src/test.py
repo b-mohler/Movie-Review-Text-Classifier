@@ -35,10 +35,10 @@ def test_naive_bayes(test_x, test_y, logprior, loglikelihood):
     accuracy = (len(test_x)-num_errors)/len(test_x)
 
     #providing printed feedback on the results
-    print("error is:",error_rate)
+    '''print("error is:",error_rate)
     print("number of errors is:", num_errors)
     print("number of reviews:",len(test_x))
-    print("accuracy",accuracy)
+    print("accuracy",accuracy)'''
     return accuracy
 
-print("The training results are:\n", test_naive_bayes(dd.X_train, pp.y_train, training.logprior, training.loglikelihood), "\n The test results are:", test_naive_bayes(dd.X_test, pp.y_test, training.logprior, training.loglikelihood))
+#print("The training results are:\n", test_naive_bayes(dd.X_train, pp.y_train, training.logprior, training.loglikelihood), "\n The test results are:", test_naive_bayes(dd.X_test, pp.y_test, training.logprior, training.loglikelihood))

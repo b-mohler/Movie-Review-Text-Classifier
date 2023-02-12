@@ -42,5 +42,5 @@ X_test = pd.concat([negative_data_points_test["review"], positive_data_points_te
 y_test = pd.concat([negative_data_points_test["sentiment"], positive_data_points_test["sentiment"]])
 
 #making sure there are the correct number of positive and negative reviews (10000 of each) 
-print("Training Values:\n", y_train.value_counts(), "\nTesting Values:\n", y_test.value_counts())
+#print("Training Values:\n", y_train.value_counts(), "\nTesting Values:\n", y_test.value_counts())
 
