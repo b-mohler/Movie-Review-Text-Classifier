@@ -1,4 +1,5 @@
 import accuracy as acc
+import training
 import predict
 import preprocessing as pp
 import seaborn as sns
@@ -19,7 +20,7 @@ predicted_results = []
 
 #for each review in random_X_test calculate the predicted sentiment and add to the predicted_results list
 for review in acc.split_data.random_X_test:
-    prediction = predict.naive_bayes_predict(review, acc.logprior, acc.loglikelihood)
+    prediction = predict.naive_bayes_predict(review, training.logprior, training.loglikelihood)
     predicted_results.append(prediction)
 
 #empty lists for indices of the false positives, false negatives, true positives and true negatives 

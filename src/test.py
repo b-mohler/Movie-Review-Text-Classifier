@@ -1,5 +1,9 @@
 import numpy as np
 import predict
+import data_division as dd
+import preprocessing as pp
+import training
+
 '''Function: test_naive_bayes
 Parameters: test_x - a list of reviews
             test_y - the corresponding labels for the list of reviews
@@ -37,4 +41,4 @@ def test_naive_bayes(test_x, test_y, logprior, loglikelihood):
     print("accuracy",accuracy)
     return accuracy
 
-print("The training results are:\n", test_naive_bayes(X_train, y_train, logprior, loglikelihood) + "\n The test results are:", test_naive_bayes(X_test, y_test, logprior, loglikelihood))
+print("The training results are:\n", test_naive_bayes(dd.X_train, pp.y_train, training.logprior, training.loglikelihood), "\n The test results are:", test_naive_bayes(dd.X_test, pp.y_test, training.logprior, training.loglikelihood))

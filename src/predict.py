@@ -1,4 +1,5 @@
 import preprocessing as pp
+import training
 '''Function: naive_bayes_predict
 Parameters: review - a string (of a review)
         logprior - a probability
@@ -26,3 +27,4 @@ def naive_bayes_predict(review, logprior, loglikelihood):
     else:
         total_prob = 1
     return total_prob
+

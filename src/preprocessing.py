@@ -43,6 +43,6 @@ def find_occurrence(frequency, word, label):
 
 #Up to this point we've used string labels of "positive" and "negative" but now we use mapping to convert those strings to the integers 0 and 1 respectively
 output_map = {'positive': 0, 'negative': 1}
-y_train = y_train.map(output_map)
-y_test = y_test.map(output_map)
+y_train = dd.y_train.map(output_map)
+y_test = dd.y_test.map(output_map)
 

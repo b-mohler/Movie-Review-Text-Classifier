@@ -13,7 +13,7 @@ from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 #loading in the frequency dictionary containing the words and their log likelihoods from the training model found in NLPAssignment1Final.ipynb
-def load_model_params(file = "data/model_params.csv"):
+def load_model_params(file = "https://raw.githubusercontent.com/b-mohler/Movie-Review-Text-Classifier/main/data/model_params.csv"):
     loglikelihood = pd.read_csv(file)
     return loglikelihood
 load_model_params()

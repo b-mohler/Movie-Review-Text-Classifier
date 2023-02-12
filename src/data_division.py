@@ -1,10 +1,9 @@
 import pandas as pd
 from sklearn.utils import resample
-import os
-import zipfile
 
 #creating a dataframe from the movie review data
-df = pd.read_csv('data/movie_reviews.csv.zip', compression='zip')
+#zip_file = ZipFile('Movie-Review-Text-Classifier/data/movie_reviews.csv.zip')
+df = pd.read_csv('https://raw.githubusercontent.com/b-mohler/Movie-Review-Text-Classifier/main/data/movie_reviews.csv')
 
 
 #breaking up the dataframe into separate dfs for positive and negative
@@ -22,7 +21,6 @@ negative_upsample = resample(df_minority, replace = True,
 #concatenating the majority class data set and upsampled minority class data set
 df_upsampled = pd.concat([pos, negative_upsample])  
 df_upsampled = df_upsampled.sample(frac = 1)
-
 # Dividing the data into training and testing points
 
 # Considering 10000 positive and 10000 negative data points
@@ -44,4 +42,5 @@ X_test = pd.concat([negative_data_points_test["review"], positive_data_points_te
 y_test = pd.concat([negative_data_points_test["sentiment"], positive_data_points_test["sentiment"]])
 
 #making sure there are the correct number of positive and negative reviews (10000 of each) 
-print("The number of training values is:\n", y_train.value_counts() + "\n The number of testing values is:", y_test.value_counts())
+print("Training Values:\n", y_train.value_counts(), "\nTesting Values:\n", y_test.value_counts())
+

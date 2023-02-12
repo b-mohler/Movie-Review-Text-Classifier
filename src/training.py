@@ -1,6 +1,7 @@
 import numpy as np
 import data_division as dd
 import preprocessing as pp
+import review_counter as rc
 
 '''Function: train_naive_bayes
 Parameters: freqs - dictionary where keys are word,label pairs and values are the corresponding number of occurrences
@@ -36,7 +37,7 @@ def train_naive_bayes(freqs, train_x, train_y):
             num_neg += freqs[(pair)]
 
     # Calculate num_doc, the number of documents
-    num_doc = len(dd.y_train)
+    num_doc = len(pp.y_train)
 
     # Calculate D_pos, the number of positive documents 
     pos_num_docs = train_y.value_counts()[0]
@@ -60,5 +61,5 @@ def train_naive_bayes(freqs, train_x, train_y):
         # calculate the log likelihood of the word
         loglikelihood[word] = np.log(p_w_pos/p_w_neg)
 
-
     return logprior, loglikelihood
+logprior, loglikelihood = train_naive_bayes(rc.freqs, dd.X_train, pp.y_train)
