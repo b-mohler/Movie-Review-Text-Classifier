@@ -11,15 +11,20 @@ Before being fed into the model the data was cleaned up. In data_division.py it 
 Once this was done, preprocessing.py cleaned each review, making all letters lowercase, eliminating elements like urls, line break markers, email addresses, punctuation, and stopwords. The data was then tokenized and stemmed to create clean, workable reviews. A frequency dictionary was then created with keys for each token and label (with the labels being 0 or 1, depending on whether the positive or negative instances of the token were being accessed). 
 
 ## Generating Frequency Values
-
+Using review_counter.py the frequency dictionary created during preprocessing was populated with the frequencies with which each token/label pairing occurred in the training dataset, to then be used to train the model.
 
 ## Training the Model
+The model is fed a list of reviews and their associated labels from the training dataset as well as the frequency dictionary in order to generate a logprior and loglikelihood in training.py
 
-## Implementing the Predict Function
+## Testing the Model
+The logprior and loglikelihood from the training are taken and used to create a test function (test.py) which makes predictions about each review in the test data and then compares those predictions to the actual sentiment labels associated with those reviews to test the model. 
 
-## Implementing the Test Function
+## Accuracy of the Model
+The accuracy of the model is tested in accuracy.py by randomizing the data, splitting it into new test and training sets (with 1/4 of it going to test and 3/4 to train). Once this has been done, confusion_matrix.py uses it to create a confusion matrix of the rate of true negatives, false positives, false negatives, and true positives:
 
-## Evaluating Accuracy
+![Confusion Matrix]()
+
+## Predicting Sentiment of New Reviews
 
 ## Discussion of Results
 
