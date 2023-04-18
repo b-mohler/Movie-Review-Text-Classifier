@@ -20,7 +20,7 @@ def clean_review(review):
     review = re.sub(r'[\'!@#?()*+_::<=>[\]^~{|}~"&,.-]', ' ', review) #removes the majority of punctuation outright
     review = re.sub(r'\/[^0-9/0-9]', ' ', review) #removes slashes unless directly preceding digits (to preserve fractions, like 4/10 stars)
     stopword = nltk.corpus.stopwords.words('english') #defines stopwords
-    review = " ".join([word for word in re.split(' ', review) #removes those stopwords (modified to remove at a break ' ' insted of a word /W+ to allow for the retention of ' as explained above)
+    review = " ".join([word for word in re.split(' ', review) 
             if word not in stopword])
     review = word_tokenize(review)
     stemmer = PorterStemmer()
