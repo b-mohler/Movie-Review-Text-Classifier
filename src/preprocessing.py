@@ -8,9 +8,7 @@ import data_division as dd
 '''Function: clean_review
 Parameters: review (the review to be cleaned)
 Output: the review once it has been stripped of websites, line break markers, email addresses, 
-
 punctuation and stopwords, as well as being tokenized and those tokens stemmed,
-
 the ultimate format will be a list of tokens'''
 
 def clean_review(review):
